@@ -8,6 +8,7 @@
         android:id="@+id/sp14"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:text="14sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -16,6 +17,7 @@
         android:layout_marginTop="40dp"
     app:layout_constraintTop_toTopOf="@id/sp14"
     app:layout_constraintStart_toStartOf="parent"
+        android:text="22sp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"/>
 
@@ -24,6 +26,7 @@
         app:layout_constraintTop_toTopOf="@id/sp22"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
+        android:text="28sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
