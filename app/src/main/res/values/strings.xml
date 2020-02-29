@@ -12,4 +12,9 @@
     <string name="menu_slideshow">Notes</string>
 
     <string name="home_second">Home Second</string>
+    <string name="yes">Yes of course</string>
+    <string name="no">No cancel</string>
+    <string name="delete_item">Delete item?</string>
+
+
 </resources>

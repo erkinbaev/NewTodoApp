@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.ViewHolder> {
+OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     private List<Work> list;
 
@@ -51,7 +56,20 @@ holder.bind(list.get(position));
             super(itemView);
             textTitle=itemView.findViewById(R.id.textTitle);
             textDesc=itemView.findViewById(R.id.textDesc);
+itemView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        onItemClickListener.OnClick(getAdapterPosition());
 
+    }
+
+});itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    onItemClickListener.OnLongClick(getAdapterPosition());
+                    return true;
+                }
+            });
         }
 
         public void bind(Work work) {
