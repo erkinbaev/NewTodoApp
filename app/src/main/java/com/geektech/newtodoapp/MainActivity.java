@@ -48,9 +48,8 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                startActivityForResult(new Intent(MainActivity.this, FormActivity.class), 100);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -75,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
             File file = new File(folder, "note.txt");
             try {
                 file.createNewFile();
-                FileOutputStream fos = new FileOutputStream(file);
-                fos.write(content.getBytes());
-                fos.close();
-                Toast.makeText(this, "saved", Toast.LENGTH_SHORT).show();
+//                FileOutputStream fos = new FileOutputStream(file);
+//                fos.write(content.getBytes());
+//                fos.close();
+//                Toast.makeText(this, "saved", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -124,10 +123,10 @@ startActivity(intent);
                 || super.onSupportNavigateUp();
     }
 
-    @Override
-    public void onBackPressed() {
-        notes=findViewById(R.id.notes);
-        initFile(notes.getText().toString());
-        super.onBackPressed();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        notes=findViewById(R.id.editText);
+//        initFile(notes.getText().toString());
+//        super.onBackPressed();
+//    }
 }
