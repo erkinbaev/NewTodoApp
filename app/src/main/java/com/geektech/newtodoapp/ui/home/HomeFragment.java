@@ -59,7 +59,7 @@ Work work=list.get(position);
             @Override
             public void OnLongClick(final int position) {
 AlertDialog.Builder dialog=new AlertDialog.Builder(requireContext());
-dialog.setTitle("Delete Item?").setMessage("hotite udalit?").setNegativeButton("No cancel", new DialogInterface.OnClickListener() {
+dialog.setTitle("Deleting").setMessage("Delete item?").setNegativeButton("No cancel", new DialogInterface.OnClickListener() {
     @Override
     public void onClick(DialogInterface dialog, int which) {
         dialog.cancel();

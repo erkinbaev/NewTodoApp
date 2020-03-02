@@ -2,14 +2,12 @@ package com.geektech.newtodoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.geektech.newtodoapp.models.Work;
-import com.geektech.newtodoapp.room.AppDataBase;
 
 public class FormActivity extends AppCompatActivity {
 
