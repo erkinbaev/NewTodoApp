@@ -1,6 +1,8 @@
 package com.geektech.newtodoapp;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -36,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (FirebaseAuth.getInstance().getCurrentUser()==null){
+            startActivity(new Intent(this, PhoneActivity.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
     }
     @AfterPermissionGranted(RC_WRITE_EXTERNAL)
     private void initFile(String content) {
@@ -105,7 +117,22 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, SizeActivity.class);
 startActivity(intent);
                 break;
+            case R.id.signOut:
+                AlertDialog.Builder dialog=new AlertDialog.Builder(this);
+                dialog.setTitle("Signing Out").setMessage("do you wants signing out?").setNegativeButton("No cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                }).setPositiveButton("Yes of course", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(MainActivity.this, PhoneActivity.class));
+
+                    }
+                }).show();
+break;
         }
         return super.onOptionsItemSelected(item);
     }

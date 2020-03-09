@@ -15,4 +15,9 @@
 
         />
 
+    <item
+        android:id="@+id/signOut"
+        android:orderInCategory="102"
+        android:title="Sign Out"/>
+
 </menu>

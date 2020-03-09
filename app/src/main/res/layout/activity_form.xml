@@ -10,11 +10,13 @@
 
     <EditText
         android:id="@+id/editTitle"
+        style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/editDesc"
+        style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     
@@ -23,6 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Save"/>
+        android:background="@drawable/bg_button"
+        android:text="Save"
+        android:textColor="@color/cardview_light_background"/>
 
 </LinearLayout>
