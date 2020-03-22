@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_opengallery"
+        android:onClick="onClick"
+        android:layout_marginTop="30dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+
+    <EditText
+        android:id="@+id/account_name"
+        android:layout_marginTop="30dp"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+android:hint="input name"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_button2"
+        android:text="save"
+        android:onClick="onSave"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/save_changes"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+</LinearLayout>
